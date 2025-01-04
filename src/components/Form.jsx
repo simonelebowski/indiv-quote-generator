@@ -27,7 +27,7 @@ export default function Form() {
   } = useQuoteCalculations(formState);
 
   return (
-    <div className="mt-20 flex justify-between gap-12 w-full">
+    <div className="mt-20 px-5 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-12 w-full">
       <form className="w-full max-w-[530px] flex flex-col gap-4">
         <h1 className="text-2xl text-[#e0a83c]">Select the options below</h1>
         {step === 1 && (

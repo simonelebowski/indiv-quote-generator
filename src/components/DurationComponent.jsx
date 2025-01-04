@@ -45,7 +45,7 @@ export default function DurationComponent({
   const startDateOptions = generateStartDates();
 
   return (
-    <div className="flex justify-between">
+    <div className="flex flex-col gap-4 sm:flex-row sm:gap-0 justify-between">
       <div className="flex flex-col gap-1.5">
         <label className="text-gray-600">Start Date</label>
         <select
