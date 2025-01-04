@@ -31,9 +31,11 @@ export default function DurationComponent({
       currentDate.setDate(currentDate.getDate() + 7);
     }
 
-    return startDates.map(
-      (date) => date.toISOString().split("T")[0] // Format: YYYY-MM-DD
-    );
+    return startDates.map((date) => {
+      const dateString = date.toDateString();
+      const parts = dateString.split(" ").slice(1);
+      return `${parts[0]}, ${parts[1]}, ${parts[2]}`;
+    });
   }
 
   // Generate options for durations (1 to 49 weeks)

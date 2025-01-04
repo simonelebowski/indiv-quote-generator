@@ -18,7 +18,10 @@ function loadTemplate(url) {
 export async function generateQuoteWithTemplate(data) {
   try {
     console.log("Loading template...");
-    const content = await loadTemplate("/templates/template_new.docx");
+    // const content = await loadTemplate("/templates/template_new.docx");
+    const content = await loadTemplate(
+      "/templates/CES-Quotation-template.docx"
+    );
     console.log("Template loaded successfully!");
 
     const zip = new PizZip(content);

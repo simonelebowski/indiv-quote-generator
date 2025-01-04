@@ -6,6 +6,7 @@ import Step2Accommodation from "./Step2Accommodation";
 import Step3Transfers from "./Step3Transfers";
 import Step4Fees from "./Step4Fees";
 import Review from "./Review";
+
 export default function Form() {
   const {
     validationErrors,

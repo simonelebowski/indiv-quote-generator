@@ -28,15 +28,18 @@ export function useQuoteCalculations(formState) {
 
   const coursePrice =
     calculateCoursePrice(selectedCourse, courseWeeks) * courseWeeks;
+
   const accommodationPrice = calculateAccommodationPrice(
     selectedAccommodation,
     needsAccommodation,
     accommodationWeeks
   );
+
   const arrivalTransferPrice = getArrivalTransferPrice(
     needsArrivalTransfer,
     arrivalTransferAirport
   );
+
   const departureTransferPrice = getDepartureTransferPrice(
     needsDepartureTransfer,
     departureTransferAirport

@@ -16,6 +16,7 @@ export default function Review({
   needsDepartureTransfer,
   departureTransferAirport,
   needsInsurance,
+  needsSpecialDiet,
   addAccommodationFee,
   addRegistrationFee,
   addTextBook,
@@ -45,15 +46,42 @@ export default function Review({
       course: selectedCourse.label,
       dates: date,
       weeks: courseWeeks,
-      accommodation: needsAccommodation,
-      accommodationType: selectedAccommodation.label,
+      coursePrice: `£${coursePrice}`,
+      courseWeekPrice: `£${coursePrice / courseWeeks}`,
+      accommodation: `£${needsAccommodation}`,
+      accommodationType:
+        needsAccommodation && selectedAccommodation
+          ? selectedAccommodation.label
+          : `Accommodation: no`,
       accommodationWeeks: accommodationWeeks,
-      arrivalTransfer: needsArrivalTransfer,
-      departureTransfer: needsDepartureTransfer,
+      accommodationPrice: accommodationPrice,
+      accommodationWeekPrice: `£${accommodationPrice / accommodationWeeks}`,
+      specialDiet:
+        needsSpecialDiet === "yes" ? `Special diet: yes` : `Special diet: no`,
+      specialDietWeekPrice: needsSpecialDiet === `yes` ? `£30` : ``,
+      specialDietPrice:
+        needsSpecialDiet === "yes" ? `£${30 * accommodationWeeks}` : `£0`,
+      arrivalTransfer:
+        needsArrivalTransfer === "yes"
+          ? `Arrival transfer ${arrivalTransferAirport.label}`
+          : `Arrival transfer: no`,
+      arrivalTransferPrice:
+        needsArrivalTransfer && arrivalTransferAirport
+          ? `£${arrivalTransferAirport.price}`
+          : `£0`,
+      departureTransfer:
+        needsDepartureTransfer === "yes"
+          ? `Departure transfer ${departureTransferAirport.label}`
+          : `Departure transfer: no`,
+      departureTransferPrice:
+        needsDepartureTransfer && departureTransferAirport
+          ? `£${departureTransferAirport.price}`
+          : `£0`,
       insurance: needsInsurance,
-      accommodationFee: addAccommodationFee,
-      registrationFee: addRegistrationFee,
-      textBook: addTextBook,
+      accommodationFee: addAccommodationFee === "no" ? "£75" : "£0",
+      registrationFee: addRegistrationFee === "yes" ? "£75" : "£0",
+      textBook: addTextBook === "yes" ? "£32" : "Not included",
+      bankCharges: addBankCharges === "yes" ? "£15" : "£0",
       totalPrice: `£${totalQuote || 0}`,
     };
 
