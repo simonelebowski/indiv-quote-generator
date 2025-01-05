@@ -17,7 +17,7 @@ export default function AccommodationComponent({
   setSelectedAccommodation,
   needsSpecialDiet,
   setNeedsSpecialDiet,
-  onChange,
+  setAddAccommodationFee,
   validationErrors,
   setValidationErrors,
   filteredAccommodation,
@@ -56,6 +56,7 @@ export default function AccommodationComponent({
         value={needsAccommodation}
         onChange={(e) => {
           setNeedsAccommodation(e.target.value);
+          setAddAccommodationFee("no");
           setValidationErrors((prev) => ({
             ...prev,
             needsAccommodation: false,
@@ -79,15 +80,6 @@ export default function AccommodationComponent({
             label="Accommodation"
             options={options}
             value={selectedAccommodation?.value || ""}
-            // onChange={() => {
-            //   onChange();
-            //   setValidationErrors((prev) => ({
-            //     ...prev,
-            //     selectedAccommodation: false,
-            //   }));
-            // }}
-            // onChange={onChange}
-
             onChange={(e) => {
               const accommodation = filteredAccommodation.find(
                 (accommodation) => accommodation.value === e.target.value
