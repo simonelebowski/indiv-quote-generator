@@ -60,6 +60,16 @@ export const courses = {
         { minWeeks: 12, maxWeeks: 49, price: 565 },
       ],
     },
+    {
+      value: 'junior',
+      label: "Junior Programme",
+      priceRules: [
+        {minWeeks: 1, maxWeeks: 2, price: 0},
+        {minWeeks: 3, maxWeeks: 3, price: 0},
+        {minWeeks: 4, maxWeeks: 4, price: 0},
+        {minWeeks: 5, maxWeeks: 9, price: 0},
+      ]
+    }
   ],
   London: [
     {
