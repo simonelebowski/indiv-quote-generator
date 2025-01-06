@@ -64,10 +64,10 @@ export const courses = {
       value: 'junior',
       label: "Junior Programme",
       priceRules: [
-        {minWeeks: 1, maxWeeks: 2, price: 0},
-        {minWeeks: 3, maxWeeks: 3, price: 0},
-        {minWeeks: 4, maxWeeks: 4, price: 0},
-        {minWeeks: 5, maxWeeks: 9, price: 0},
+        {minWeeks: 1, maxWeeks: 2, price: 561.5,
+        {minWeeks: 3, maxWeeks: 3, price: 560.35},
+        {minWeeks: 4, maxWeeks: 4, price: 553.5},
+        {minWeeks: 5, maxWeeks: 9, price: 550},
       ]
     }
   ],
