@@ -58,7 +58,7 @@ export default function Review({
       accommodationType:
         needsAccommodation === "yes" && selectedAccommodation
           ? selectedAccommodation.label
-          : `Accommodation: no`,
+          : `No Accommodation`,
       accommodationWeeks:
         needsAccommodation === "yes" ? accommodationWeeks : "",
       accommodationPrice: `£${accommodationPrice}`,
@@ -74,16 +74,16 @@ export default function Review({
         needsSpecialDiet === "yes" ? `£${30 * accommodationWeeks}` : `£0`,
       arrivalTransfer:
         needsArrivalTransfer === "yes"
-          ? `Yes - from ${arrivalTransferAirport.label}`
-          : `Arrival transfer: no`,
+          ? `Yes - ${arrivalTransferAirport.label}`
+          : `No`,
       arrivalTransferPrice:
         needsArrivalTransfer && arrivalTransferAirport
           ? `£${arrivalTransferAirport.price}`
           : `£0`,
       departureTransfer:
         needsDepartureTransfer === "yes"
-          ? `Departure transfer ${departureTransferAirport.label}`
-          : `Departure transfer: no`,
+          ? `Yes - ${departureTransferAirport.label}`
+          : `No`,
       departureTransferPrice:
         needsDepartureTransfer && departureTransferAirport
           ? `£${departureTransferAirport.price}`
