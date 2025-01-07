@@ -29,6 +29,7 @@ export default function Review({
   accommodationPrice,
 }) {
   function handleDownloadQuote() {
+    console.log(infoSchool)
     const fields = {
       needsInsurance,
       addTextBook,
@@ -273,5 +274,3 @@ export default function Review({
     </div>
   );
 }
-
-// Download Your Quote	#5cb85c (or #4e79a7)	#ffffff	#449d44 (or #3c5c85)
