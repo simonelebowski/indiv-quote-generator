@@ -4,6 +4,7 @@ import { generateQuoteWithTemplate } from "../utils/generateQuoteWithTemplate";
 
 export default function Review({
   selectedDestination,
+  infoSchool,
   selectedCourse,
   date,
   courseWeeks,
@@ -43,6 +44,10 @@ export default function Review({
 
     const quoteData = {
       location: selectedDestination,
+      address: infoSchool.adress,
+      postcode: infoSchool.postcode,
+      telephone: infoSchool.telephone,
+      email: infoSchool.email,
       course: selectedCourse.label,
       dates: date,
       weeks: courseWeeks,

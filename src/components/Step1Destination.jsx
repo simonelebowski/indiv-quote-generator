@@ -9,6 +9,7 @@ import { destinations, courses } from "../data/data";
 export default function Step1Destination({
   selectedDestination,
   setSelectedDestination,
+  setInfoSchool,
   selectedCourse,
   setSelectedCourse,
   date,
@@ -40,6 +41,7 @@ export default function Step1Destination({
           onChange={(e) => {
             reset();
             setSelectedDestination(e.target.value);
+            setInfoSchool(destinations.find((destination) => destination.value === e.target.value));
             setValidationErrors((prev) => ({ ...prev, destination: false }));
           }}
           border={`${

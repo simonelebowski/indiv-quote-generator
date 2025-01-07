@@ -7,7 +7,7 @@ export const schools = [
 ]
 
 export const destinations = [
-  { value: "Worthing", label: "Worthing" },
+  { value: "Worthing", label: "Worthing", address:"12, Stoke Abbott Road", postcode: "BN11 1HE", telephone: "+44 (0) 1903 231330", email: "registrar@ces-schools.com" },
   { value: "London", label: "London" },
   { value: "Oxford", label: "Oxford" },
   { value: "Leeds", label: "Leeds" },

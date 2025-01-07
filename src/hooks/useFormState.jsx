@@ -3,6 +3,7 @@ import { useState } from "react";
 export function useFormState() {
   const [step, setStep] = useState(1);
   const [selectedDestination, setSelectedDestination] = useState("");
+  const [infoSchool, setInfoSchool] = useState("");
   const [selectedCourse, setSelectedCourse] = useState("");
   const [date, setDate] = useState("");
   const [courseWeeks, setCourseWeeks] = useState("");
