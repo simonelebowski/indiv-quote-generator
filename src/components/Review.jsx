@@ -44,7 +44,7 @@ export default function Review({
 
     const quoteData = {
       location: selectedDestination,
-      address: infoSchool.adress,
+      address: infoSchool.address,
       postcode: infoSchool.postcode,
       telephone: infoSchool.telephone,
       email: infoSchool.email,
@@ -66,14 +66,14 @@ export default function Review({
           ? `£${accommodationPrice / accommodationWeeks}`
           : "",
       specialDiet:
-        needsSpecialDiet === "yes" ? `Special diet: yes` : `Special diet: no`,
+        needsSpecialDiet === "yes" ? `Yes` : `No`,
       specialDietWeeks: needsSpecialDiet === "yes" ? accommodationWeeks : "",
       specialDietWeekPrice: needsSpecialDiet === `yes` ? `£30` : ``,
       specialDietPrice:
         needsSpecialDiet === "yes" ? `£${30 * accommodationWeeks}` : `£0`,
       arrivalTransfer:
         needsArrivalTransfer === "yes"
-          ? `Arrival transfer ${arrivalTransferAirport.label}`
+          ? `Yes - from ${arrivalTransferAirport.label}`
           : `Arrival transfer: no`,
       arrivalTransferPrice:
         needsArrivalTransfer && arrivalTransferAirport
@@ -90,7 +90,8 @@ export default function Review({
       insurance: needsInsurance,
       accommodationFee: addAccommodationFee === "no" ? "£75" : "£0",
       registrationFee: addRegistrationFee === "yes" ? "£75" : "£0",
-      textBook: addTextBook === "yes" ? "£32" : "Not included",
+      textBook: addTextBook === "yes" ? "Included" : "Not included",
+      textBookPrice: addTextBook === "yes" ? "£32" : "£0",
       bankCharges: addBankCharges === "yes" ? "£15" : "£0",
       totalPrice: `£${totalQuote || 0}`,
     };
