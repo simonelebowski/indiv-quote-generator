@@ -55,9 +55,8 @@ export default function AccommodationComponent({
         name="accommodation"
         value={needsAccommodation}
         onChange={(e) => {
-          const value = e.target.value
+          const value = e.target.value;
           setNeedsAccommodation(e.target.value);
-          setAddAccommodationFee("no");
           setValidationErrors((prev) => ({
             ...prev,
             needsAccommodation: false,

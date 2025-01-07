@@ -13,6 +13,7 @@ export default function Step2Accommodation({
   setSelectedAccommodation,
   needsAccommodation,
   setNeedsAccommodation,
+  setAddAccommodationFee,
   courseWeeks,
   date,
   accommodationWeeks,
@@ -41,6 +42,7 @@ export default function Step2Accommodation({
         <AccommodationComponent
           needsAccommodation={needsAccommodation}
           setNeedsAccommodation={setNeedsAccommodation}
+          setAddAccommodationFee={setAddAccommodationFee}
           courseWeeks={courseWeeks}
           options={filteredAccommodation}
           date={date}
