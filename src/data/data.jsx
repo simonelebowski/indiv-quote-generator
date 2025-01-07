@@ -1,3 +1,11 @@
+export const schools = [
+  {city: "Worthing", address:"12, Stoke Abbott Road", postcode: "BN11 1HE", telephone: "+44 (0) 1903 231330", email: "registrar@ces-schools.com"},
+  {city: "London", address:"Nelson House, 271, Kingston Road", postcode: "SW19 3NW", telephone: "+44 (0) 20 8543 5150", email: "registrar@ces-schools.com"},
+  {city: "Oxford", address:"67, High Street", postcode: "OX33 1XT", telephone: "+44 (0) 1865 874786", email: "oxfordregist@ces-schools.com"},
+  {city: "Leeds", address:"9, Park Place", postcode: "LS1 2RU", telephone: "+44 (0) 1113 2427171", email: "leedsregistrar@ces-schools.com"},
+  {city: "Edinburgh", address:"54, Manor Place", postcode: "EH3 7EH", telephone: "+44 (0) 131 2265004", email: "edinburghregistrar@ces-schools.com"}
+]
+
 export const destinations = [
   { value: "Worthing", label: "Worthing" },
   { value: "London", label: "London" },
