@@ -49,6 +49,8 @@ export function useFormState() {
     setStep,
     selectedDestination,
     setSelectedDestination,
+    infoSchool,
+    setInfoSchool,
     selectedCourse,
     setSelectedCourse,
     date,
