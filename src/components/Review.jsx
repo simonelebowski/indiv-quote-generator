@@ -89,7 +89,7 @@ export default function Review({
           ? `£${departureTransferAirport.price}`
           : `£0`,
       insurance: needsInsurance,
-      accommodationFee: addAccommodationFee === "no" ? "£75" : "£0",
+      accommodationFee: addAccommodationFee === "yes" ? "£75" : "£0",
       registrationFee: addRegistrationFee === "yes" ? "£75" : "£0",
       textBook: addTextBook === "yes" ? "Included" : "Not included",
       textBookPrice: addTextBook === "yes" ? "£32" : "£0",
