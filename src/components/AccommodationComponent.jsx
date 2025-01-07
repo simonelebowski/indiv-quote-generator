@@ -65,6 +65,7 @@ export default function AccommodationComponent({
             setAccommodationWeeks("");
             setSelectedAccommodation("");
             setAccommodationWeeks("");
+            setAddAccommodationFee("no");
           }
         }}
         border={`${
