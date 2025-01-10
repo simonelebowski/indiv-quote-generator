@@ -77,7 +77,7 @@ export default function Review({
           ? `Yes - ${arrivalTransferAirport.label}`
           : `No`,
       arrivalTransferPrice:
-        needsArrivalTransfer && arrivalTransferAirport
+        needsArrivalTransfer === 'yes' && arrivalTransferAirport
           ? `£${arrivalTransferAirport.price}`
           : `£0`,
       departureTransfer:
@@ -85,7 +85,7 @@ export default function Review({
           ? `Yes - ${departureTransferAirport.label}`
           : `No`,
       departureTransferPrice:
-        needsDepartureTransfer && departureTransferAirport
+        needsDepartureTransfer === 'yes' && departureTransferAirport
           ? `£${departureTransferAirport.price}`
           : `£0`,
       insurance: needsInsurance,
