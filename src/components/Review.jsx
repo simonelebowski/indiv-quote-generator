@@ -63,9 +63,7 @@ export default function Review({
         needsAccommodation === "yes" ? accommodationWeeks : "",
       accommodationPrice: `£${accommodationPrice}`,
       accommodationWeekPrice:
-        needsAccommodation === "yes"
-          ? `£${accommodationPrice / accommodationWeeks}`
-          : "",
+        needsAccommodation === "yes" ? `£${selectedAccommodation.price}` : "",
       specialDiet: needsSpecialDiet === "yes" ? `Yes` : `No`,
       specialDietWeeks: needsSpecialDiet === "yes" ? accommodationWeeks : "",
       specialDietWeekPrice: needsSpecialDiet === `yes` ? `£30` : ``,

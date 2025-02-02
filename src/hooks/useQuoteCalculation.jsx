@@ -15,6 +15,7 @@ export function useQuoteCalculations(formState) {
     needsAccommodation,
     accommodationWeeks,
     needsSpecialDiet,
+    summerWeeks,
     needsInsurance,
     addTextBook,
     addRegistrationFee,
@@ -32,7 +33,8 @@ export function useQuoteCalculations(formState) {
   const accommodationPrice = calculateAccommodationPrice(
     selectedAccommodation,
     needsAccommodation,
-    accommodationWeeks
+    accommodationWeeks,
+    summerWeeks
   );
 
   const arrivalTransferPrice = getArrivalTransferPrice(

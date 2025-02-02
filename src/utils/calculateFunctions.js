@@ -18,14 +18,16 @@ export function calculateCoursePrice(course, weeks) {
 export function calculateAccommodationPrice(
   selectedAccommodation,
   needsAccommodation,
-  accommodationWeeks
+  accommodationWeeks,
+  totalSummerWeeks
 ) {
   if (
     selectedAccommodation &&
     Object.keys(selectedAccommodation).length > 0 &&
     needsAccommodation === "yes"
   ) {
-    return selectedAccommodation.price * accommodationWeeks;
+    const summerCharge = totalSummerWeeks > 0 ? totalSummerWeeks * 35 : 0;
+    return summerCharge + selectedAccommodation.price * accommodationWeeks;
   } else {
     return 0;
   }
