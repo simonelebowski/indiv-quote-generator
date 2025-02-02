@@ -55,12 +55,16 @@ export function handleContinueBtnTransfers(
   const isValidArrivalTransfer =
     needsArrivalTransfer &&
     (needsArrivalTransfer === "no" ||
-      (needsArrivalTransfer === "yes" && arrivalTransferAirport !== ""));
+      (needsArrivalTransfer === "yes" &&
+        arrivalTransferAirport &&
+        arrivalTransferAirport !== ""));
 
   const isValidDepartureTransfer =
     needsDepartureTransfer &&
     (needsDepartureTransfer === "no" ||
-      (needsDepartureTransfer === "yes" && departureTransferAirport !== ""));
+      (needsDepartureTransfer === "yes" &&
+        departureTransferAirport &&
+        departureTransferAirport !== ""));
 
   if (isValidArrivalTransfer && isValidDepartureTransfer) {
     setStep((prevStep) => prevStep + 1);

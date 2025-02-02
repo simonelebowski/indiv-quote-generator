@@ -62,20 +62,25 @@ export default function useFormValidation() {
 
   function step3ValidateFields(fields) {
     const errors = [];
+
     if (!fields.needsArrivalTransfer) errors.needsArrivalTransfer = true;
 
     if (!fields.needsDepartureTransfer) errors.needsDepartureTransfer = true;
 
     if (
-      fields.needsArrivalTransfer === "yes" &&
-      !fields.arrivalTransferAirport
+      (fields.needsArrivalTransfer === "yes" &&
+        !fields.arrivalTransferAirport) ||
+      (fields.needsArrivalTransfer === "yes" &&
+        Object.keys(fields.arrivalTransferAirport).length === 0)
     ) {
       errors.arrivalTransferAirport = true;
     }
 
     if (
-      fields.needsDepartureTransfer === "yes" &&
-      !fields.departureTransferAirport
+      (fields.needsDepartureTransfer === "yes" &&
+        !fields.departureTransferAirport) ||
+      (fields.needsDepartureTransfer === "yes" &&
+        Object.keys(fields.departureTransferAirport).length === 0)
     ) {
       errors.departureTransferAirport = true;
     }
