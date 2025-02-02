@@ -33,6 +33,10 @@ export default function TransfersComponent({
               needsDepartureTransfer: false,
             }));
           }
+
+          if (e.target.value === "no") {
+            onChangeAirport("");
+          }
         }}
         border={`${
           errorNeedsTransfer ? "ring-2 ring-red-500 focus:ring-red-500" : ""
