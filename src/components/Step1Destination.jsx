@@ -41,7 +41,11 @@ export default function Step1Destination({
           onChange={(e) => {
             reset();
             setSelectedDestination(e.target.value);
-            setInfoSchool(destinations.find((destination) => destination.value === e.target.value));
+            setInfoSchool(
+              destinations.find(
+                (destination) => destination.value === e.target.value
+              )
+            );
             setValidationErrors((prev) => ({ ...prev, destination: false }));
           }}
           border={`${
@@ -75,6 +79,7 @@ export default function Step1Destination({
             <DurationComponent
               date={date}
               courseWeeks={courseWeeks}
+              selectedCourse={selectedCourse}
               onChangeDate={(e) => {
                 setDate(e.target.value);
                 setValidationErrors((prev) => ({ ...prev, date: false }));

@@ -5,6 +5,7 @@ export default function DurationComponent({
   onChangeWeeks,
   borderDate,
   borderWeeks,
+  selectedCourse,
 }) {
   // Function to generate dates for every Monday in 2025
   function generateStartDates() {
@@ -38,11 +39,22 @@ export default function DurationComponent({
     });
   }
 
+  // Generate start dates for 2025
+  let startDateOptions = generateStartDates();
+
+  // If course type is "junior", filter only between June 16 - August 15
+  if (selectedCourse.value === "junior") {
+    startDateOptions = startDateOptions.filter((dateString) => {
+      const date = new Date(dateString);
+      const startLimit = new Date(2025, 5, 16); // June 16, 2025
+      const endLimit = new Date(2025, 7, 15); // August 15, 2025
+
+      return date >= startLimit && date <= endLimit;
+    });
+  }
+
   // Generate options for durations (1 to 49 weeks)
   const durationOptions = Array.from({ length: 49 }, (_, i) => i + 1);
-
-  // Generate start dates for 2025
-  const startDateOptions = generateStartDates();
 
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:gap-0 justify-between">
