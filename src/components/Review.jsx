@@ -29,7 +29,7 @@ export default function Review({
   accommodationPrice,
 }) {
   function handleDownloadQuote() {
-    console.log(infoSchool)
+    console.log(infoSchool);
     const fields = {
       needsInsurance,
       addTextBook,
@@ -66,8 +66,7 @@ export default function Review({
         needsAccommodation === "yes"
           ? `£${accommodationPrice / accommodationWeeks}`
           : "",
-      specialDiet:
-        needsSpecialDiet === "yes" ? `Yes` : `No`,
+      specialDiet: needsSpecialDiet === "yes" ? `Yes` : `No`,
       specialDietWeeks: needsSpecialDiet === "yes" ? accommodationWeeks : "",
       specialDietWeekPrice: needsSpecialDiet === `yes` ? `£30` : ``,
       specialDietPrice:
@@ -77,16 +76,16 @@ export default function Review({
           ? `Yes - ${arrivalTransferAirport.label}`
           : `No`,
       arrivalTransferPrice:
-        needsArrivalTransfer === 'yes' && arrivalTransferAirport
-          ? `£${arrivalTransferAirport.price}`
+        needsArrivalTransfer === "yes" && arrivalTransferAirport
+          ? `£${arrivalTransferAirport?.price ?? 0}`
           : `£0`,
       departureTransfer:
         needsDepartureTransfer === "yes"
           ? `Yes - ${departureTransferAirport.label}`
           : `No`,
       departureTransferPrice:
-        needsDepartureTransfer === 'yes' && departureTransferAirport
-          ? `£${departureTransferAirport.price}`
+        needsDepartureTransfer === "yes" && departureTransferAirport
+          ? `£${departureTransferAirport?.price ?? 0}`
           : `£0`,
       insurance: needsInsurance,
       accommodationFee: addAccommodationFee === "yes" ? "£75" : "£0",
@@ -179,7 +178,7 @@ export default function Review({
                   </p>
                 </h3>
                 {needsArrivalTransfer === "yes" && arrivalTransferAirport && (
-                  <p>{`£${arrivalTransferAirport.price}`}</p>
+                  <p>{`£${arrivalTransferAirport?.price ?? 0}`}</p>
                 )}
               </div>
             )}
@@ -199,7 +198,7 @@ export default function Review({
                 </h3>
                 {needsDepartureTransfer === "yes" &&
                   departureTransferAirport && (
-                    <p>{`£${departureTransferAirport.price}`}</p>
+                    <p>{`£${departureTransferAirport?.price ?? 0}`}</p>
                   )}
               </div>
             )}
