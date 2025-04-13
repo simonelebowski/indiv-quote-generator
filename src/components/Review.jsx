@@ -29,7 +29,6 @@ export default function Review({
   accommodationPrice,
 }) {
   function handleDownloadQuote() {
-    console.log(infoSchool);
     const fields = {
       needsInsurance,
       addTextBook,
@@ -71,7 +70,7 @@ export default function Review({
         needsSpecialDiet === "yes" ? `£${30 * accommodationWeeks}` : `£0`,
       arrivalTransfer:
         needsArrivalTransfer === "yes"
-          ? `Yes - ${arrivalTransferAirport.label}`
+          ? `${arrivalTransferAirport.label}`
           : `No`,
       arrivalTransferPrice:
         needsArrivalTransfer === "yes" && arrivalTransferAirport
@@ -79,7 +78,7 @@ export default function Review({
           : `£0`,
       departureTransfer:
         needsDepartureTransfer === "yes"
-          ? `Yes - ${departureTransferAirport.label}`
+          ? `${departureTransferAirport.label}`
           : `No`,
       departureTransferPrice:
         needsDepartureTransfer === "yes" && departureTransferAirport
@@ -92,6 +91,19 @@ export default function Review({
       textBookPrice: addTextBook === "yes" ? "£32" : "£0",
       bankCharges: addBankCharges === "yes" ? "£15" : "£0",
       totalPrice: `£${totalQuote || 0}`,
+
+      hasAccommodation: needsAccommodation === "yes",
+      hasSpecialDiet: needsSpecialDiet === "yes",
+      hasArrivalTransfer: needsArrivalTransfer === "yes",
+      hasDepartureTransfer: needsDepartureTransfer === "yes",
+      hasTextBook: addTextBook === "yes",
+      hasAccommodationFee: addAccommodationFee === "yes",
+      hasRegistrationFee: addRegistrationFee === "yes",
+      hasBankCharges: addBankCharges === "yes",
+      hasInsurance: needsInsurance === "yes",
+      insurancePrice: needsInsurance === "yes" ? courseWeeks * 10 : 0,
+      courseWeekLabel: courseWeeks === 1 ? "week" : "weeks",
+      accommodationWeekLabel: accommodationWeeks === 1 ? "week" : "weeks",
     };
 
     generateQuoteWithTemplate(quoteData);

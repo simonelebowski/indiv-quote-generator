@@ -37,7 +37,7 @@ export function calculateAccommodationPrice(
 export function calculateSummerWeeks(startDate, accommodationWeeks) {
   let totalSummerWeeks = 0;
   const surchargeStart = new Date("2025-06-16");
-  const surchargeEnd = new Date("2025-08-15");
+  const surchargeEnd = new Date("2025-08-30");
   const startDateObj = new Date(startDate);
 
   for (let i = 0; i < accommodationWeeks; i++) {
